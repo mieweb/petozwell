@@ -1,0 +1,14 @@
+{
+  "name": "petozwell",
+  "version": "1.0.0",
+  "description": "Install Ozwell, the yellow octopus pet for Codex and ChatGPT desktop",
+  "type": "module",
+  "bin": { "petozwell": "bin/petozwell.js" },
+  "files": ["bin/", "lib/", "ozwell/", "preview/", "README.md"],
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test", "check": "node --check bin/petozwell.js && node --check lib/install.js" },
+  "repository": { "type": "git", "url": "git+https://github.com/mieweb/petozwell.git" },
+  "homepage": "https://github.com/mieweb/petozwell#readme",
+  "bugs": "https://github.com/mieweb/petozwell/issues",
+  "license": "UNLICENSED"
+}

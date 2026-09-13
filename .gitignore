@@ -4,3 +4,5 @@ Desktop.ini
 __pycache__/
 *.py[cod]
 dist/
+node_modules/
+*.tgz
