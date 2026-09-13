@@ -1,0 +1,26 @@
+name: Homebrew release checks
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    runs-on: macos-latest
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALL_CLEANUP: 1
+    steps:
+      - name: Install from the public tap
+        run: |
+          if brew help trust >/dev/null 2>&1; then
+            brew trust --formula mieweb/petozwell/petozwell
+          fi
+          brew tap mieweb/petozwell https://github.com/mieweb/petozwell.git
+          brew install mieweb/petozwell/petozwell
+      - name: Test the installed formula
+        run: brew test mieweb/petozwell/petozwell
