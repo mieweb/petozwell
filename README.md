@@ -37,12 +37,15 @@ The short registry command `npx petozwell` is not published. Use the GitHub comm
 ### Homebrew (macOS)
 
 ```sh
+brew trust --formula mieweb/petozwell/petozwell
 brew tap mieweb/petozwell https://github.com/mieweb/petozwell.git
 brew install mieweb/petozwell/petozwell
 petozwell
 ```
 
 Homebrew installs Node.js if needed and provides the `petozwell` command. Run `petozwell` as your normal user to copy Ozwell into your own Codex home. It accepts the same `--dry-run`, `--codex-home`, and `--force` options as the npx installer.
+
+The first command trusts only Ozwell's formula, as required by current Homebrew versions. Older Homebrew versions without `brew trust` can skip that line. See [Homebrew's tap trust documentation](https://docs.brew.sh/Tap-Trust).
 
 To upgrade later, run `brew update`, then `brew upgrade petozwell`, and rerun `petozwell`. If the artwork changed, use `petozwell --force` to preserve a backup and install the update. Removing the Homebrew formula removes the installer; it leaves your selected pet files in your Codex home.
 
